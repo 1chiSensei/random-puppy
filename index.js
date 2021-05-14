@@ -14,7 +14,7 @@ function formatResult(getRandomImage) {
 }
 
 function storeResults(images, subreddit) {
-    const getRandomImage = images[Math.floor(Math.random() * images.length)];
+    const getRandomImage = () => images[Math.floor(Math.random() * images.length)];
 
     randomCache[subreddit] = getRandomImage;
     return getRandomImage;
