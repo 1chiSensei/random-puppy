@@ -1,7 +1,6 @@
 'use strict';
 
 const got = require('got');
-const uniqueRandomArray = require('unique-random-array');
 const EventEmitter = require('eventemitter3');
 
 const randomCache = {};
@@ -15,7 +14,7 @@ function formatResult(getRandomImage) {
 }
 
 function storeResults(images, subreddit) {
-    const getRandomImage = uniqueRandomArray(images);
+    const getRandomImage = images[Math.floor(Math.random() * images.length)];
 
     randomCache[subreddit] = getRandomImage;
     return getRandomImage;
